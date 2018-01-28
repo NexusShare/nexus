@@ -23,6 +23,75 @@
     <!-- Custom styles for this template -->
     <link href="css/agency.min.css" rel="stylesheet">
 
+    <style>
+
+    $primary-color: #fff;
+    $accent-color: #009688;
+
+    * {
+    	box-sizing: border-box;
+    	padding: 0;
+    	margin: 0;
+    }
+
+    .container-radio {
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	min-height: 100vh;
+    }
+
+    .list {
+    	flex: 0 20rem;
+    }
+
+    .list__item {
+    	position: relative;
+    	&:hover .label {
+    		color: $accent-color;
+    		&::before {
+    			border: 0.5rem solid $accent-color;
+    			margin-right: 2rem;
+    		}
+    	}
+    }
+
+    .radio-btn {
+    	display: none;
+    	&:checked + .label {
+    		color: $accent-color;
+    		&::before {
+    			margin-right: 2rem;
+    			border: 0.5rem solid $accent-color;
+    			background: $primary-color;
+    		}
+    	}
+    }
+
+    .label {
+    	display: flex;
+    	align-items: center;
+    	padding: 1rem 0;
+    	color: $primary-color;
+    	font-size: 1.25rem;
+    	text-transform: uppercase;
+    	cursor: pointer;
+    	transition: all 0.25s linear;
+    }
+
+    .label::before {
+    	display: block;
+    	height: 1.125rem;
+    	width: 1.125rem;
+    	margin-right: 0.625rem;
+    	content: "";
+    	border: 0.5rem solid $primary-color;
+    	border-radius: 50%;
+    	transition: all 0.25s linear;
+    }
+
+    </style>
+
   </head>
 
   <body id="page-top">
@@ -71,17 +140,27 @@
     <!-- Services -->
     <section id="services">
       <div class="container">
-        <!-- Contributing -->
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSenGjmTq-f1AAVnjsf0BrvDCnE9dFSakX0Pq1l5V3M3iO8IlQ/viewform?embedded=true" width="760" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-        <!-- Contributing Option A -->
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdqQuqBeLLYJrgaJ2IcSA5KnAj3v6i1jqwLzEL9PZtiL-9jrA/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-        <!-- Contributing Option B -->
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfC1ZCuQIx9o0ZEtOfW2fQtUKfurdN2x82cf8bJ6wN_k36-yQ/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-        <!-- Contributing Option C -->
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe6dfbSszDwOdnG0waGt8L4DJCZyM3jNDvOAtjgj6UlgHE3Ug/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-        <!-- Contributing Option D -->
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdmwyGYVUkUraMTkaIgN1EIrGpa1D1Q7OC0b_TchliJimsg-g/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      <div class="container-radio">
+       <ul class="list">
+        <li class="list__item">
+         <input type="radio" class="radio-btn" name="choice" id="a-opt" />
+         <label for="a-opt" class="label">pick me!</label>
+        </li>
+        <li class="list__item">
+         <input type="radio" class="radio-btn" name="choice" id="b-opt" />
+         <label for="b-opt" class="label">pick me i'm better!</label>
+        </li>
+        <li class="list__item">
+         <input type="radio" class="radio-btn" name="choice" id="c-opt" />
+         <label for="c-opt" class="label">pick me i'm the best!</label>
+        </li>
+        <li class="list__item">
+         <input type="radio" class="radio-btn" name="choice" id="d-opt" />
+         <label for="d-opt" class="label">pick me i'm fabulous!</label>
+        </li>
+       </ul>
       </div>
+    </div>
     </section>
 
     <!-- Footer -->
